@@ -33,3 +33,7 @@
 11. 'git commit -m "수정내용"' : 임시 저장소에 수정한 내용과 함께 수정된 내용을 저장한다.
 12. 'git remote add origin https://github.com/Leejoonsoo524/html_TIL.git' : 깃허브 저장소 업로드 위치가 어디인지 주소연결
 13. 'git push origin main' :  완전히 저장된 내용을 git 서버에 업로드 한다.
+# HTML 작성법
+* ' <시작태그 속성="값" 속성="값"></닫기태그>'
+* 시작태그부터 닫기태그 까지 한번에 **요소(element)** 란 명칭으로 부른다.
+* 속성은 시작 태그에만 쓰고 닫기태그에는 속성을 쓰지 않는다.
