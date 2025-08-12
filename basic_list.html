@@ -166,6 +166,61 @@
             </ul>
         </li>
     </ul>
-
+<hr>
+    <p>2개 이상 연속 내용 - 목록화 (li)</p>
+    <p>목록이 순서가 있으면 (ol) 없으면 (ul) 그룹목록태그</p>
+    <h2>웹 접근성</h2>
+    <ul>
+        <!-- <h2>웹 접근성</h2> 사용 금지 문법이 잘못됨-->
+        <li>이미지태그 사용 시 대체텍스트 alt를 사용해야 한다.</li>
+        <li>동양상태그 사용 시 autoplay는 반드시 muted와 함께 사용해야한다.</li>
+    </ul>
+<hr>
+    <h1>정의형 목록 태그</h1>
+    <dl><!-- 정의형 목록 그룹 -->
+        <dt>정의형 제목</dt><!-- h1 대체금지 -->
+        <dd>정의형 내용1</dd>        
+    </dl>
+<hr>
+    <!-- 네이버 영한사전 -->
+    <h1>영어사전</h1>
+    <div class="title">
+        <h2>단어·숙어</h2>
+        <p>57</p>
+        <dl class="contents">
+            <dt>
+                <a href="#">HTML</a>
+                <a href="#"><img src="" alt="단어장 저장"></a>
+            </dt>
+            <dd>
+                <!-- 직접한거 -->
+                약어 컴퓨터 하이퍼텍스트 기술용 언어(<a href="#">Hypertext</a>
+                                                <a href="#">Mark-up</a>
+                                                <a href="#">Language</a>)
+            </dd>
+            <dd>
+                <!-- 강사님이 해준거 -->
+                <strong>약어</strong>
+                <em>컴퓨터</em>
+                <span>Hypertext</span>
+                <span>Mark-up</span>
+                <span>Language</span>
+            </dd>
+            <dd class="listening">
+                <p>
+                    미국∙영국 [ ˌeɪtʃ tiː em ˈel ]
+                    미국식 [ ˌeɪtʃ tiː em ˈel ]
+                </p>
+                <div class="voice">
+                    <a href="#"><img src="" alt="all"></a>
+                    <a href="#"><img src="" alt="US"></a>
+                    <a href="#"><img src="" alt="GB"></a>
+                    <a href="#"><img src="" alt="AU"></a>
+                    <a href="#"><img src="" alt="IN"></a>
+                </div>
+            </dd>
+            <dd><a href="#">옥스포드 영한사전</a></dd>
+        </dl>
+    </div>
 </body>
 </html>
