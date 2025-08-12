@@ -76,5 +76,6 @@
 ## git 버전관리 ## 
 ### github 폴더 복제 방법 ###
 * git clone 주소 붙여넣기
+# cd html_TIL 실행할것!! #
 ### github 수정된 폴더 내려받기
 * git pull origin main
