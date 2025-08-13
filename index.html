@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <title>블로그테스트</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <!-- HTML 내부 CSS 작성 위치(head 안에서 Title다음) -->
+    <style>        
+        body {background-color: #000;}
+        #wrap
+        {
+            background-color: #fff;
+            /* 크기 CSS -> width, height 0이 아닌 수 단위 필수 */
+            width: 440px; height: 100vh;
+            /* 안쪽 여백 padding*/
+            padding-left:15px;
+            padding-right:15px;
+        }
+        /*#wrap header{background-color: blueviolet;}*/
+        #wrap header .profile_img {}
+        #wrap header .profile_img img {width:100%; height: 10vh}
+        #wrap header h1
+        {            
+            /* 글자 굵기 Regular 400 기준 +- 100*/
+            font-family: 'pretendard';
+            font-size: 32px;
+            line-height: 150%;
+            font-weight: 600;       
+            margin-bottom: 3px;                
+        }
+        #wrap header h1+h2
+        {
+            font-family: 'pretendard';
+            font-size: 16px;
+            line-height: 150%;
+            font-weight: 500; 
+            padding-bottom: 12px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #000;
+        }
+        /*********************************/
+        #wrap main {}
+        #wrap main h2 
+        {
+            font-family: 'pretendard';
+            font-size: 20px;
+            line-height: 150%;
+            font-weight: 500; 
+            margin-bottom: 20px;
+        }
+        #wrap main .block 
+        {
+            background-color: #eee;
+            padding-top: 10px;  padding-bottom: 10px;
+            padding-left: 15px;  padding-right: 15px;
+            /*글자 속성*/
+            font-family: 'pretendard';
+            font-size: 13px;
+            line-height: 150%;
+            color: orangered;
+            /* 블록과 인라인 요소 띄우기*/
+            margin-bottom: 16px;
+        }
+        #wrap main .inline
+        {
+            background-color: lightslategray;
+            padding-top: 10px;  padding-bottom: 10px;
+            padding-left: 15px;  padding-right: 15px;
+            /*글자 속성*/
+            font-family: 'pretendard';
+            font-size: 13px;
+            line-height: 150%;
+            margin-bottom: 16px;
+            color: orange;
+        }
+        #wrap .result li 
+        {
+            background-color: lightcoral;
+            padding-top: 10px;  padding-bottom: 10px;
+            padding-left: 15px;  padding-right: 15px;
+            margin-bottom: 13px;            
+        }        
+        #wrap .result li a 
+        {            
+            font-size: 14px;
+            line-height: 150%;            
+            color: yellow;
+        }
+
+        #wrap footer {}
+        #wrap footer p {}
+        #wrap footer p > em {}
+        #wrap footer p > span {}
+        /*********************************/
+        .parent p{}
+        .parent h1+p{}
+        .parent h1~p{}
+        
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <p class=" profile_img"><img src="./images/blue.jpg" alt=""></p>
+            <h1>JS</h1>
+            <h2>UI/UX 프론트엔드 반응형웹디자인&웹퍼블리셔 개발 양성과정</h2>
+        </header>
+
+        <main>
+            <h2>HTML 공부 목록(블록태그)</h2>
+            <div class="block">
+                h1, h2, h3, h4, h5, h6, p, blockquote, ul, ol, li, dl, dt, dd, hr, div, 
+                header, section, aside, nav, footer, article, main, a, video
+            </div>
+
+            <div class="inline">
+                span, em, strong, br, img, a, sup, sub, code, mark, s, q, del 
+            </div>
+
+            <h2>작업 결과 바로가기</h2>        
+            <ul class="result">            
+                <li><a href="./figma_layout/leeddeok.html">figma_layout/leeddeok</a></li>
+                <li><a href="./figma_layout/ohou_product.html">figma_layout/ohou_product</a></li>
+                <li><a href="./figma_layout/soopsori.html">figma_layout/soopsori</a></li>
+            </ul>
+
+            <h2>과제 체출</h2>        
+            <ul class="result">            
+                <li><img src="" alt=""><a href="#">대백과사전</a></li>
+                
+            </ul>
+        </main>
+
+        
+
+        <footer>
+            <p>
+                <em>JS</em>
+                <span>may2497@nate.com</span>
+            </p>
+        </footer>
+    </div>
+
+    <div class="parent">
+        <p>내용1</p>
+        <h1>제목1</h1>
+        <p>내용2</p>
+        <p>내용3</p>
+    </div>
+</body>
+</html>

@@ -86,3 +86,39 @@
 * 동양상태그 사용 시 autoplay는 반드시 muted와 함께 사용해야한다.
 * -----------------------------------------------
 * git 정상다운 테스트 (집)
+* -----------------------------------------------
+* # CSS 
+* ## CSS selector
+* 선택자 {속성:값;}
+* 선택자 : CSS로 디자인하는 대상
+* {} : 속성과 값을 묶어주는 CSS 디자인 괄호
+* 속성 : 선택자에 적용하는 속성
+* 값 : 속성 값
+* ; : 앞 속성값이 여기서 종료했다는 것을 의미
+* 색상 속성을 활용해서 다양한 선택자를 공부하자
+* 글자 = color 배경은 = background color
+* <h1> 제목 </h1>
+* CSS-> h1 {color:red;}
+* CSS #id
+<!-- id 일 경우 CSS 컬러선택 문법 -->
+* <h1 id="heading">제목</h1>
+* h1{color:red;}
+* #heading{color:red;}
+* h1#heading{color:red;}
+<!-- class 일 경우 CSS 컬러선택 문법 -->
+* <h1 class="title">제목</h1>
+* h1{color:red;}
+* .title{color:red;}
+* h1.title{color:red;}
+<!-- div 안에 a태그가 있을경우 선택 -->
+* <div> <a>menu</a> </div>
+* div a{color:red;}
+* div > a{color:red;}
+---
+# CSS
+## 캐스케이딩 스타일 시트(폭포 단계별로 작성하는 CSS)
+### CSS 기초 작성 순서
+1. 'styles/reset.css' 파일만들기
+2. html파일 head 안 link:CSS 자동완성 작성하고 위 1번 파일 연결하기
+3. (html 작성완료 기준) 부모->자식 순서대로 모든 선택자 작성하기 '{}' 중괄호 비운 상태로
+4. 모든 선택자 작성 후 '{속성:값;}' 추가로 작성하며 디자인 진행하기
