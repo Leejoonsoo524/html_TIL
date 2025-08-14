@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>표 | HTML</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!--프리텐다드(v1.3.9) 웹글꼴 연결주소-->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />
+    <link rel="stylesheet" href="./styles/reset.css">
+    <style>
+        h1  {}
+        #t1
+        {
+            border:2px solid #000;
+            width: 200px;
+        }
+        #t1 tr {}
+        #t1 tr th
+        {
+            background-color: aqua;
+        }
+        #t1 tr td 
+        {
+            border:1px solid #f00;
+            width: 100px;
+        }
+
+        #ts
+        {
+            background-color:  midnightblue;
+            width: 300px;
+        }
+        #ts tr{}
+        #ts tr th
+        {
+            border:2px solid #fff;
+            color: lightgray;
+            width: 300px;
+        }
+        #ts tr td
+        {
+            border:2px solid #fff;
+            color: #fff;
+            width: 300px;
+        }
+        #meeting {border: 5px solid #000; width: 400px;}
+        #meeting thead {background-color: red;}
+        #meeting thead tr {}
+        #meeting thead tr th{color: orange;border: 2px solid #000;}
+
+        #meeting tbody {background-color: yellow;}
+        #meeting tbody tr {border: 2px solid #000;}
+        #meeting tbody tr th{color: green;border: 2px solid #000;}
+        #meeting tbody tr td{color: blue;border: 2px solid #000;}
+
+        #meeting tfoot {background-color: burlywood;}
+        #meeting tfoot tr {}
+        #meeting tfoot tr th{color: violet;border: 2px solid #000;}
+        #meeting tfoot tr td{color: black;border: 2px solid #000;}
+
+        #plan 
+        {
+            background-color: #f5f5f5;
+            width: 1000px;            
+            /*font-family: 'pretendard', '맑은 고딕', 'sans-serif';*/            
+        }
+        #plan thead 
+        {
+            border-top: 3px solid #000;
+            border-bottom: 1px solid #ddd;            
+        }
+        #plan thead tr {}
+        #plan thead tr th
+        {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        #plan thead tr .company { width: 100px; }
+        #plan thead tr th span{font-size: 0.75rem;}        
+
+        #plan tbody{}
+        #plan tbody tr{}
+        #plan tbody tr th
+        {
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        /* 수열선택자 활용 업체 가운데 정렬*/
+        /*#plan tbody tr th:nth-child(1) {text-align:center;}*/
+        #plan tbody tr th:first-child(1) {text-align:center;}
+
+        #plan tbody tr th em
+        {
+            background-color: #CFA7F8;
+            color: #fff;
+        }
+        #plan tbody tr th strong{font-size: 1.25rem;}
+        #plan tbody tr td
+        {
+            border-bottom: 1px solid #ddd;
+            width: 100px;
+            padding-top: 10px;
+            padding-bottom: 10px;        
+            font-size: 1rem;/*16px*/
+            text-align: center;
+        }
+        #plan tbody tr td span{font-size: 0.75rem;}
+        #plan tbody tr td em{color: #EE239B;}
+        #plan tbody tr td .join_btn{}
+        #plan tbody tr td .select_btn
+        {
+            background-color: #CFA7F8;
+            color: #fff;
+        }        
+    </style>
+
+</head>
+<body>
+    <h1>2행 2열 표</h1>
+    <table id="t1">
+        <tr>
+            <th>1열(제목)</th><!-- 가운데 정렬 태그 -->
+            <td>2열</td>
+        </tr>            
+        <tr>
+            <td>1열</td>
+            <td>2열</td>
+        </tr>
+    </table>
+
+    <h1>3행 2열</h1>
+    <table id="ts">
+        <tr>
+            <th>1행1열</th>
+            <th>1행2열</th>            
+        </tr>
+        <tr>
+            <td>2행1열</td>
+            <td>2행2열</td>
+        </tr>
+        <tr>
+            <td>3행1열</td>
+            <td>3행2열</td>
+        </tr>
+    </table>
+    
+    <h1>국회 회의록 시스템</h1>
+    <table id="meeting">
+        <thead>
+            <tr>
+                <th>선수</th>
+                <th>출석횟수</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <th>초선(152)</th>
+                <td>105.4</td>
+            </tr>            
+            <tr>
+                <th>재선(67)</th>
+                <td>94.4</td>
+            </tr>            
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <th>평균</th>
+                <td>99.3</td>
+            </tr>            
+        </tfoot>
+        
+    </table>
+
+    <h1>요금제</h1>
+    <table id="plan">
+        <thead>
+            <tr>
+                <th class="company">업체</th>
+                <th>요금제명</th>
+                <th>데이터</th>
+                <th>음성</th>
+                <th>문자</th>
+                <th>월 정액 <br><span>(부가세포함금액)</span></th>
+                <th>상세</th>
+                <th>비교</th>                
+            </tr>
+        </thead>
+        <tbody>
+            <tr><!-- 1행 -->
+                <th>Amobile</th>
+                <th><em>추천</em><br><strong>요금폭탄방지 매일 2GB</strong></th>
+                <td>11GB<br><span>초과시 매일 2GB+3MB 속도로 무제한 이용</span></td>
+                <td>기본제공<br><span>(영상/부가 300분)</span></td>
+                <td>기본제공</td>
+                <td>월<em>20,900</em>원</td>
+                <td><a href="#" class="join_btn">가입하기</a></td>
+                <td><a href="#" class="select_btn">선택하기</a></td>
+            </tr>
+
+            <tr><!-- 2행 -->
+                <th>Amobile</th>
+                <th><em>추천</em><br><strong>요금폭탄방지 매일 2GB</strong></th>
+                <td>11GB<br><span>초과시 매일 2GB+3MB 속도로 무제한 이용</span></td>
+                <td>기본제공<br><span>(영상/부가 300분)</span></td>
+                <td>기본제공</td>
+                <td>월<em>20,900</em>원</td>
+                <td><a href="#" class="join_btn">가입하기</a></td>
+                <td><a href="#" class="select_btn">선택하기</a></td>
+            </tr>
+
+            <tr><!-- 3행 -->
+                <th>Amobile</th>
+                <th><em>추천</em><br><strong>요금폭탄방지 매일 2GB</strong></th>
+                <td>11GB<br><span>초과시 매일 2GB+3MB 속도로 무제한 이용</span></td>
+                <td>기본제공<br><span>(영상/부가 300분)</span></td>
+                <td>기본제공</td>
+                <td>월<em>20,900</em>원</td>
+                <td><a href="#" class="join_btn">가입하기</a></td>
+                <td><a href="#" class="select_btn">선택하기</a></td>
+            </tr>
+        </tbody>
+        <tfoot></tfoot>
+    </table>
+</body>
+</html>
