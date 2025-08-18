@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Login 연습</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">    
+    <!-- 웹 글꼴 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Reset Css -->
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/google_login.css">
+
+</head>
+<body>
+    <div id="wrap">
+        <h1>Welcom back</h1>
+        <p>Welcome back! Please enter your details.</p>
+        <!-- form == block -->
+        <form action="#" method="post" id="login_frm">
+            <fieldset class="id_pw_group">      <!-- block 태그 -->
+                <legend>입력양식</legend>        <!-- inline 태그 -->
+                <!-- 실제 화면에서 보이지 않음 -->
+                <dl>
+                    <dt>Email</dt>
+                    <dd><input type="text" name="user_email_id" id="user_email_id" class="id_pw" placeholder="Enter yout email or id"></dd>
+                    <dt>Password</dt>
+                    <dd><input type="password" name="user_pw" id="user_pw" class="id_pw" placeholder="Enter your Password"></dd>
+                </dl>
+                <p class="error">Please enter your ID</p>
+            </fieldset>
+
+            <fieldset class="btn_search_group">
+                <legend>버튼&찾기</legend>
+                <h2>Forgot password</h2>
+                <p><button type="submit" id="login_btn" class="btn">Login</button></p>
+                <p><a href="https://accounts.google.com/v3/signin/identifier?continue=
+                            https://accounts.google.com/signin/chrome/sync/finish?
+                            est%3DAI3H0-o1bVcOQaaGYHIk0s__BKajFtyZ781s_l3JSEaUflTTNfjh7P54VbWsxjG3x1nMtpBzho9SOJFLYaB4Zr0%26continue%3D
+                            https://www.google.com/&ssp=1&flowName=GlifDesktopChromeSync&dsh=S-1052965337:1755489563586573" target="_blank" id="sign_google" class="btn">sign in with Google</a>
+                </p>
+                <p class="account">Don’t have on account? <a href="#" class="sign_up">Sign up for free</a></p> 
+            </fieldset>
+
+        </form>
+
+    </div>
+</body>
+</html>
