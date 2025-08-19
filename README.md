@@ -150,3 +150,11 @@
 * 1px 0 2px : 상(1) 좌우(0) 하(2)
 * Margin 겹침현상 주의해야함
 * 겹침 발생시 위쪽부터 먼저 작성한 Margin 값이 적용된다.
+# Form 입력과 선택 요소
+## '<input type="">'
+* type=text : 입력요소/name(데이터구분용)/value(초기값)
+* type=checkbox : 선택요소/name(그룹용)/value(데이터구분용)
+* 입력 요소 종류 : text, password, mail, search, number 등
+* 선택 요소 종류 : checkbox, radio, select, option
+* 데이터구분용은 id처럼 해당 데이터만을 구분하는 중복되지 않는 이름을 설정한다.
+* 그룹용은 클래스와 같이 2개 이상의 요소를 묶어주는 반복이름개념 으로 사용한다.
