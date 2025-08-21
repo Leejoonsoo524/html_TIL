@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <title>CSS 공부</title>
+    <style>
+        /* body *::selection{background-color: yellow;} */
+        body 
+        {
+            background: #c042d4;
+            background: linear-gradient(90deg, rgba(192, 66, 212, 1) 52%, rgba(87, 199, 133, 1) 84%, rgba(237, 221, 83, 1) 95%);
+        }
+        #wrap {}
+        #wrap h1{clear: both;}
+        #wrap h1:nth-child(1){color: blueviolet;}
+        #wrap h1:nth-of-type(2){color: red;}
+
+        #wrap h1:nth-of-type(1),
+        #wrap h1:nth-of-type(2){font-size: 3rem;}
+
+        #wrap .list{background-color: aqua;}
+        #wrap .list li{float: left;}
+        #wrap .list:nth-child(2){border: 2px solid red;}/* 해석하면 wrap의 2변째 클래스 list 에 대한 선택 2번째인 이유는 h1이 1번째이기 때문에 그렇다 */
+        #wrap .list:nth-of-type(2){border: 2px solid blue;}/* 해석하면 wrap의 list라는 클래스 타입인 2번째를 선택하겠다 */
+
+        #wrap .list:nth-child(2) li:nth-child(1){background-color: brown;}/* 해석하면 wrap의 2변째 클래스 list 에 첫번째 li -> 1 을 선택한다.*/
+        #wrap .list:nth-of-type(1) li:nth-child(2){background-color: lime;}/* 해석하면 wrap의 list라는 클래스 타입인 2번째 li -> 2 를 선택하겠다 */
+
+        #wrap .list:nth-of-type(1) li:nth-child(4){background-color: lightcoral;}
+        #wrap .list:nth-of-type(2) li:nth-child(4) a{background-color: lightcoral;}
+        #wrap .list li a {font-size: 2rem;}
+        #wrap .list li:nth-child(even) {border-bottom: 4px dotted black;}
+        #wrap .list li:nth-child(odd) {border-bottom: 4px dotted white;}
+
+        #wrap .list:nth-child(4) li:nth-child(2n){background-color: brown;}
+        /*  #wrap ul{}
+            #wrap .list{} 
+            이렇게 작성 해도 같은 ul을 선택하는것임
+            클래스 명이 조금 더 확실한 의미가 있어서 클래스 명을 쓰는게 더 좋음
+        */
+
+        section {clear: both;}
+        section #btn1, section .link1 {} /* 그룹선택 */
+        section > * {font-size: 3rem; padding: 10px; margin: 4px; background-color: #ccc;}                   /* 전체 선택 모든(*) 자식(>) 선택자 */
+        section #btn1:hover {background-color: #222;}
+        section .link1:hover {background-color: #fff;}
+        section input {border: 3px solid #fff;}
+        section input:focus {border: 3px solid green;}
+
+        article {}
+        article a {}
+        article a:nth-child(2) {background-color: yellow;}
+        article a:nth-child(2)::before 
+        {
+            content: '';
+            display: inline-block;
+            width: 1px; height: 6px;
+            background-color: red; margin: 0 4px;
+        }
+        article a:nth-child(2)::after 
+        {
+            content: '';
+        }
+
+        .mobile
+        {
+            width: 430px; height: 923px;
+            margin: 100px auto;
+            background: url(https://i.pinimg.com/736x/e7/5e/98/e75e9823996c52d6c2a15d86d6f567c9.jpg) center / cover;
+        }
+
+        .mobile::after
+        {
+            content: ''; display: block;
+            width: 100%; height: 100%;
+            /* background: rgba(255, 0, 0, 0.2); */
+            background: linear-gradient(rgba(255, 0, 0, 0.5), yellow);
+        }
+        /* ************************************************** */
+        #search_frm {}
+        #search_frm #user_name {}
+        #search_frm #user_size {}
+        #search_frm #user_color {}
+        #search_frm #search {}
+        /* 속성선택자 ^(시작) $(끝) *(포함)*/
+        #search_frm input[type=text] {background-color: yellow;}
+        #search_frm input[type^=t] {background-color: pink;}/* 타입이 t로 시작하는것을 선택 */
+        #search_frm input[name^=user] {background-color: gray;}/* name 이 user 로 시작하는것을 선택 */
+        #search_frm input[type$=xt] {background-color: black;}
+        #search_frm input[type*=r_] {background-color: skyblue;}
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h1>CSS 공부</h1>
+        <ul class="list">
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+        </ul>
+        <h1>CSS 공부2</h1>
+        <ul class="list">
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">8</a></li>
+            <li><a href="#">9</a></li>
+            <li><a href="#">10</a></li>
+            <li><a href="#">11</a></li>
+            <li><a href="#">12</a></li>
+        </ul>
+    </div>
+    
+    <section>
+        <button type="button" id="btn1">확인</button>
+        <a href="#" class="link1">바로가기</a>
+        <input type="text" placeholder="아이디 입력">
+    </section>
+    <article>
+        <a href="#">아이디 찾기</a>
+        <a href="#">비밀번호 찾기</a>
+        <a href="#">회원가입</a>
+    </article>
+
+    <div class="mobile"></div>
+
+    <form action="#" method="get" id="search_frm">
+        <input type="text" name="user_name" id="user_name" placeholder="상품명">
+        <input type="text" name="user_size" id="user_size" placeholder="사이즈">
+        <input type="text" name="user_color" id="user_color" placeholder="색상">
+        <button type="button" id="search">검색</button>
+    </form>
+
+</body>
+</html>

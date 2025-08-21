@@ -55,6 +55,12 @@ body{background-color: #f5f5f5;}
     border-radius: 5px;
     border: 1px solid #aaa;    
 }
+#wrap #join_frm .user_info dd .input_de:focus
+{
+    border: 1px solid #9E00B7;
+}
+/* 가입 양식 공통 hover 버튼 */
+#wrap #join_frm .btn_design:hover{background-color: #df15ff !important;}/* !important 강제 우선순위 */
 #wrap #join_frm .user_info dd .input_de::placeholder 
 {
     /* 회원가입 1~6 예시 공통 */
@@ -147,7 +153,8 @@ body{background-color: #f5f5f5;}
     border: 1px solid #9E00B7; border-radius: 5px;
     background-color: #fff;
 }
-#wrap #join_frm .user_info dd .birthday {width: 50px; text-align: center;}
+#wrap #join_frm .user_info dd .birthday {border: 1px solid #fff;  width: 50px; text-align: center;}
+#wrap #join_frm .user_info dd .birthday:focus {border: 1px solid #9E00B7;}
 #wrap #join_frm .user_info dd #user_y {}
 #wrap #join_frm .user_info dd #user_m {}
 #wrap #join_frm .user_info dd #user_d {}

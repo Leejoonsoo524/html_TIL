@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입,오늘의 집</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">    
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/login.css">
+</head>
+<body>
+    <div id="wrap">
+        <h1><a href="./index.html"><img src="./image/logo.png" alt="오늘의 집"></a></h1>
+        <h1>로그인</h1>
+        <p>SNS계정으로 간편하게 로그인</p>
+        <!------------------------------->
+        <div class="sns">
+        <a href="#" class="sns_login"><img src="./image/facebook.png" alt="페이스북 아이디로 로그인"></a>
+        <a href="#" class="sns_login"><img src="./image/kakao.png" alt="카카오톡 아이디로 로그인"></a>
+        <a href="#" class="sns_login"><img src="./image/naver.png" alt="네이버 아이디로 로그인"></a>
+        </div>
+        <!------------------------------->
+        <form action="#" method="post" id="join_frm">
+            <fieldset class="content">
+                <legend>가입정보</legend>
+                <dl class="info">
+                    <div id="join_id">
+                        <dt>이메일</dt>
+                        <dd>
+                            <input type="text" name="user_id" id="user_id" class="id_pw" placeholder="이메일">
+                            <span>@</span>
+                        </dd>
+                        <dd>
+                            <select name="mail" id="mail">
+                                <option value="naver">naver.com</option>
+                                <option value="nate">nate.com</option>
+                                <option value="daum">daum.net</option>                            
+                            </select>
+                        </dd>
+                        <dd><button type="button" id="certified_btn" class="btn_design">이메일 인증하기</button></dd>
+                    </div>
+                    
+                    <dt>비밀번호</dt>
+                    <dd><input type="password" name="user_pw" id="user_pw" class="id_pw" placeholder="비밀번호"></dd>
+                </dl>            
+            </fieldset>
+            <!--  -->
+            <fieldset class="law">
+                <legend>가입약관</legend>
+            </fieldset>
+            <button type="submit" id="join_btn">회원가입</button>
+            <p>이미 아이디가 있으신가요? <a href="./login.html">회원가입</a></p>
+        </form>
+        
+    </div>
+</body>
+</html>
