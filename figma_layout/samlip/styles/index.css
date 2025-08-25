@@ -1,0 +1,55 @@
+/* index 파일에만 존재하는 디자인 */
+#wrap .visual_bnr_wrap {}
+#wrap .visual_bnr_wrap section
+{
+    /* 공통 */
+    background-size: cover;
+    height: 800px;
+}
+#wrap .visual_bnr_wrap section h2
+{
+    /* 공통 */
+    font-size: var(--text-title70p);
+    font-weight: var(--text-weight_bold);
+    line-height: var(--text-title_90);
+    letter-spacing: var(--text-minus2);
+}
+#wrap .visual_bnr_wrap section p
+{
+    /* 공통 */
+    font-size: var(--text-contents21p);
+    line-height: var(--text-contents_150);
+    letter-spacing: var(--text-minus2);
+    color: var(--color-gray4);
+
+}
+/********************************************/
+#wrap .visual_bnr_wrap .bnr1
+{
+    background-image: url(../images/banner1.jpg);
+}
+#wrap .visual_bnr_wrap .bnr1 h2{color: var(--color-white);}
+#wrap .visual_bnr_wrap .bnr1 h2 p{}
+/********************************************/
+#wrap .visual_bnr_wrap .bnr2
+{
+    background-image: url(../images/banner2.jpg);
+}
+#wrap .visual_bnr_wrap .bnr2 h2{color: var(--color-coral);}
+#wrap .visual_bnr_wrap .bnr2 p{}
+/********************************************/
+#wrap .visual_bnr_wrap .bnr3
+{
+    background-image: url(../images/banner3.jpg);
+}
+#wrap .visual_bnr_wrap .bnr3 h2{color: var(--color-green);}
+#wrap .visual_bnr_wrap .bnr3 p{}
+/********************************************/
+#wrap .visual_bnr_wrap .bnr4
+{
+    background-image: url(../images/banner4.jpg);
+}
+#wrap .visual_bnr_wrap .bnr4 h2{color: var(--color-brown);}
+#wrap .visual_bnr_wrap .bnr4 h2 p{}
+/********************************************/
+
