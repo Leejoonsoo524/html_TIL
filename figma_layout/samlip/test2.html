@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <style>
+        main
+        {
+            width: 600px; height: 400px; 
+            background-color: yellow;
+            /* position: relative; */
+            /* 박스3의 부모는 body,main,section 3개인데  
+            박스3의 absolute는 섹션 메인 바디 순으로 올라가면서 
+            position 이 있는지 확인하고 position이 있는 부모의 위치를 기준으로 잡는다
+            그래서 박스3은 main을 기준으로 위치하고있다.*/
+        }
+        main section
+        {
+            width: 300px; height: 150px; 
+            background-color: aqua;
+            position: relative;
+        }
+        main section .box
+        {
+            border: 3px solid #000; font-size: 2rem; 
+            width: 50px; height: 50px;
+        }
+        main section .box1{}
+        main section .box2
+        {
+            position: relative;/* 필수 -> 현재위치*/
+            left: 30px;/* 선택 */
+            top: 10px;/* 선택 */
+            /* 위치 설정할땐 한방향만 사용해야함 */
+            /* 현 위치에서 왼쪽에서 30px만큼 움직이겠다 */
+        }
+        main section .box3
+        {
+            position: absolute;/* 부모 기준으로 위치설정 부모는 section->main->body 순으로 올라감*/
+            /* 부모 설정이 position으로 따로 설정안되어 있으면 absolute는 body를 부모로 인식한다. */
+            right: 0px; bottom: 0px;
+        }
+        main section .box4
+        {
+            position: relative;/* 필수 */
+            right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <div class="box box1">1</div>
+            <div class="box box2">2</div>
+            <div class="box box3">3</div>
+            <div class="box box4">4</div>
+        </section>
+    </main>
+</body>
+</html>

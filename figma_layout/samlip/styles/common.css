@@ -7,12 +7,13 @@
     --text-menu18p:1.125rem;
     --text-sub12p:0.75rem;
     /* 행간 */
-    --text-title_90:90%;
-    --text-contents_150:150%;
-    --text-menu_sub_100:100%;    
+    --text-title_90h:90%;
+    --text-contents_150h:150%;
+    --text-menu_sub_100h:100%;    
     /* 자간 */
     --text-minus2:0.02rem;
     /* 굵기 */
+    --text-weigh_semibold:600;
     --text-weigh_bold:700;
     /* 색상 */
     --color-white:#fff;
@@ -26,28 +27,22 @@
     --margin-desktop-l-r-80:80px;
 }
 /* header 포함 공통 */
-#wrap 
-{
-
-}
+#wrap {}
 #wrap header 
 {   
-    background-color: aqua; 
     padding: 0 80px;
     height: 92px;
     display: flex;    
     flex-flow: row nowrap; /* 메인축(수평) 줄바꿈안함 */
     justify-content: space-between;/* 메인축 정렬(양쪽끝) */
-    align-items: center;/* 교차축(수직) 가운데 */    
+    align-items: center;/* 교차축(수직) 가운데 */   
+    position: relative; /* lnb 크기+위치 부모 기준*/
 }
 #wrap header h1 {}
 #wrap header h1 a {}
 #wrap header h1 a img{}
 /********************************************/
-#wrap header nav 
-{    
-    background-color: lime;
-}
+#wrap header nav {}
 #wrap header nav .gnb 
 {
     display: flex;
@@ -55,32 +50,108 @@
     gap: 70px;    
 }
 #wrap header nav .gnb > li {}
-#wrap header nav .gnb li > a
+#wrap header nav .gnb > li > a
 {
     font-size: var(--text-menu18);
-    background: yellow;    
     line-height: 92px;
     display: block;    
 }
+/********************************************/
+/* 메인메뉴에 마우스 올렸을 때 서브메뉴 보이기 공용 */
+#wrap header nav .gnb > li:hover .lnb{display: flex;}
+
+/* 서브메뉴 시작 */
+#wrap header nav .gnb > li .lnb
+{
+    background:rgba(255,255,255,0.7);
+    /* 교차시키기 + 중첩순서 */
+    position:absolute;
+    z-index:90;
+    width:100%;/* absolutpe와 함께 w100%가 있으면 부모(pst)의 너비와 같다 */
+    left: 0;
+    top: 92px;    
+    display: flex;
+    flex-flow:row nowrap;
+    justify-content: center; gap: 80px; padding: 45px 0;
+    display: none;
+}
+
+/* #wrap header nav .gnb > li:nth-child(5) .lnb {display: none;} */
+
+#wrap header nav .gnb > li .lnb > li 
+{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 20px;
+}
+#wrap header nav .gnb > li .lnb > li > a
+{
+    font-size: var(--text-menu18p); font-weight: var(--text-weigh_semibold);    
+}
+#wrap header nav .gnb > li .lnb li .lnb_depth2
+{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 15px;    
+}
+#wrap header nav .gnb > li .lnb li .lnb_depth2 > li {}
+#wrap header nav .gnb > li .lnb li .lnb_depth2 > li > a
+{    
+    font-size: var(--text-menu18p); 
+}
+
 /********************************************/
 #wrap header .right_menu 
 {
     display: flex; flex-flow: row nowrap;
     align-items: center;
-    background-color: yellow;
 }
 #wrap header .right_menu li {}
+#wrap header .right_menu li:first-child
+{
+    display: flex;
+    align-items: center;
+}
 #wrap header .right_menu li:first-child::after
 {
     content: ''; display: block;
     width: 1px; height: 13px; background: var(--color-graya);
     margin: 0 40px;
 }
+#wrap header .right_menu li:last-child{margin-left: 40px;}
 #wrap header .right_menu li > a
 {    
-    font-size: var(--text-sub12);
+    font-size: var(--text-sub12p);
 }
 #wrap header .right_menu li > a > img{}
+/* 언어선택 시 활성화 디자인 */
+#wrap header .right_menu li:nth-child(2){position: relative;}
+/* 두번째 li에 마우스 올렸을 때 언어선택 보이기 */
+#wrap header .right_menu li:nth-child(2):hover .lang_select{display: flex;}/* :hover -> 마우스 올렸을때 나오는 명령어 */
 
+
+#wrap header .right_menu li:nth-child(2) .lang_select
+{
+    /* 형제 또는 부모와 겹치는 디자인 요소는 -> absolute */
+    position: absolute; z-index: 100; /* 0~999 */    
+    display: flex; flex-flow: column nowrap; gap: 10px;
+    display: none;
+}
+#wrap header .right_menu li:nth-child(2) .lang_select a
+{
+    width: 40px; line-height: 40px; /* 행간을 위해서 line-height 사용 일반 height 사용시 수직이 맞지않음 */
+    text-align: center;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-graya);
+    border-radius: 50%;  
+    font-size: var(--text-sub12p);
+} 
+#wrap header .right_menu li:nth-child(2) .lang_select a.kr{}
+#wrap header .right_menu li:nth-child(2) .lang_select a.en{}
+#wrap header .right_menu li:nth-child(2) .lang_select a.cn{}
+
+/* 메인 */
 #wrap main {}
 /********************************************/
