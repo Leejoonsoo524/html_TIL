@@ -3,9 +3,12 @@
 {
     /* --대상-용도:반복설정값; */
     --text-title70p:4.375rem;
+    --text-subtitle40p:2.5rem;
     --text-contents21p:1.313rem;
     --text-menu18p:1.125rem;
+    --text-sub14p:0.875rem;
     --text-sub12p:0.75rem;
+    --text-sub10p:0.625rem;
     /* 행간 */
     --text-title_90h:90%;
     --text-contents_150h:150%;
@@ -19,15 +22,18 @@
     --color-white:#fff;
     --color-gray4:#444;
     --color-graya:#aaa;
+    --color-grayd:#ddd;
     --color-brown:#642c10;
     --color-green:#4a6512;
     --color-coral:#d43936;
+    --color-point:#36d4e5;
     /* 레이아웃 정보 */
     --width-desktop:1440px;
     --margin-desktop-l-r-80:80px;
 }
+body,html{scroll-behavior: smooth;}
 /* header 포함 공통 */
-#wrap {}
+#wrap {padding-top: 92px;}
 #wrap header 
 {   
     padding: 0 80px;
@@ -36,7 +42,10 @@
     flex-flow: row nowrap; /* 메인축(수평) 줄바꿈안함 */
     justify-content: space-between;/* 메인축 정렬(양쪽끝) */
     align-items: center;/* 교차축(수직) 가운데 */   
-    position: relative; /* lnb 크기+위치 부모 기준*/
+    position: fixed; /* lnb 크기+위치 부모 기준*/
+    z-index: 900; left: 0; top: 0;
+    width: 100%; /* fixed or ansolute 사용시 너비값을 재설정 해야한다. */
+    background: var(--color-white);
 }
 #wrap header h1 {}
 #wrap header h1 a {}
