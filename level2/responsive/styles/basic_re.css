@@ -1,0 +1,38 @@
+/* PC 1200~max(100%) FF98E5 */
+/* 태블릿 834~1199px  7CB0FF */
+/* 모바일 320~833px   FFFA61 */
+/* 모바일 제작부터 시작한다면 min-width 규칙부터 */
+/* PC 제작부터 시작한다면 max-width 규칙부터 */
+/* 최소 제한 너비는 시작 선택자에 먼저 작성한다. */
+
+/* 모바일 */
+body {background-color: #FFFA61; /* max-width: 100%; 이곳에 안씀 */}
+main 
+{
+    min-width: 320px; /* 이곳에 씀 */
+    width: 100%; padding: 0 15px; border: dotted 3px #000;
+}
+main h1 {font-weight: 700; font-size: 2rem;}
+main p {line-height: 150%; font-size: 0.875rem;}
+/* 미디어쿼리 바깥 기본선택자는 모든 태그에 대한 선택자를 작성한다. */
+@media screen and (min-width:834px)
+{
+    /* 미디어쿼리 안쪽 선택자는 기본선택자 중 달라지는 값을 가진 선택자만 작성한다.*/
+    body {background-color: #7cb0ff;}
+    main {/* width: 100%; 이거 안써도 됨 */padding: 0 30px;}
+    main h1 {font-size: 2.25rem;}
+    main p {font-size: 1rem;}
+}
+
+@media screen and (min-width:1200px)
+{
+    body {background-color: #ff98e5;}
+    main 
+    {
+        width: 1200px; margin: 0 auto; 
+        padding: 0;/* 패딩은 모바일 용이니까 모바일부터 시작해서 패딩 초기화 필요 */
+    }
+    main h1 { font-size: 2.625rem; }
+    main p {font-size: 1rem;}
+
+}
