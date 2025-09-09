@@ -7,6 +7,13 @@ header {
     position:fixed; left:50%; top:0; margin-left:-700px;
 }
 header nav a {margin:0 7px;}
+main {position: relative;}
+main::before, main::after
+{
+    background: linear-gradient(90deg, rgb(9,13,43), transparent);
+    content: ''; display: block; width: 30%; height: 100%;
+    position: relative; top: 0; z-index: 500;
+}
 header .right a {
     position:relative; padding:5px 5px 5px 27px;
     border:1px dashed rgba(255,255,255,0.6); 
@@ -18,6 +25,8 @@ header .right a::before {
     width:20px; height:20px;
     background-image:url(../images/ic_sp_store.png);
 }
+
+
 header .right a:first-child::before {background-position:0 0;}
 header .right a:last-child::before {background-position:-20px 0;}
 .mobile_nav_icon {display:none;}
@@ -40,15 +49,20 @@ main .bg_wrap .bg {width:1400px; margin:0 auto;}
 main .bg_wrap .bg1 {
     height:100px; 
     background:url(../images/bg_cloud.png) repeat-x;
+    animation: bg 100s linear infinite;
 }
 main .bg_wrap .bg2 {
     height:200px; 
-    background:url(../images/bg_city1.png) repeat-x;
+    background:url(../images/bg_city1.png) repeat-x;    
+    animation: bg 30s linear infinite;
 }
 main .bg_wrap .bg3 {
     height:100px; position:relative; top:-96px;
     background:url(../images/bg_city2.png) repeat-x;
+    animation: bg 20s linear infinite;
 }
+main .bg_wrap .bg3,
+main .bg_wrap .bg3 {animation: bg 10s linear both;}
 /* 메인제목 */
 main .txt {}
 /* 메인 자동차 위 리스트3 */
@@ -58,6 +72,28 @@ main .car #car {width:100%;}
 main .car #left_tire, main .car #right_tire {
     position:absolute; bottom:25px; width:67px;
 }
-main .car #left_tire {left:102px;}
+main .car #left_tire {left:102px; }
 main .car #right_tire {right:91px;}
 
+main .car #left_tire,
+main .car #right_tire {animation:rotate 1s linear infinite;}
+main .scroll{animation: scroll 2s linear alternate infinite;}
+
+@keyframes bg 
+{
+    0%{background-position-x: 0;}
+    100%{background-position-x:1000px;}
+}
+
+@keyframes scroll
+{
+    0%{transform: translateY(0);}
+    100%{transform: translateY(-50px);}
+}
+
+@keyframes rotate 
+{
+    
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}

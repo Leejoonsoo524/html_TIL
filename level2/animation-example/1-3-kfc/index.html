@@ -17,16 +17,30 @@
             display:inline-block; margin-top:50px; font-weight:600;
             width:200px; color:#000;
         }
+        main .txt #order:hover {width:300px; color: #da1e27;}
+        
         #sns {position:absolute; left:0; bottom:100px;}
         #sns a {
             display:inline-block; width:40px; margin:0 10px;
             position:relative; top:0;
+            transition: transform 0.5s;
+
+        }
+        #sns a:hover 
+        {
+            transform:translateY(-50px)
         }
         #sns a img {width:100%;}
         #dynamic #btn {display:flex; position:absolute; right:0; bottom:100px;}
         #dynamic #btn a {margin:0 5px;}
         #dynamic #btn a#prev {}
-        #dynamic #btn a#next {}
+        #dynamic #btn a#next {transform: scaleX(-1);}
+
+        #dynamic #img {position: relative; width: 668px; height: 596;}/* 크기를 준 이유는 메뉴3이 앱솔루트로 자식위치를 벗어났기때문에 이미지만큼 크기를 다시 준것임 */
+        #dynamic #btn:hover ~ #img .menu1{display: none;}
+        #dynamic #btn:hover ~ #img .menu3{display: block;}        
+        #dynamic #img .menu1{display: block;}
+        #dynamic #img .menu3{position: absolute; top: 10px; left: 10px; display: none;}
     </style>
     <script>
         window.onload=function(){
@@ -50,12 +64,13 @@
                 <a href="#"><img src="images/instagram.png" alt=""></a>
             </div>
             <div id="dynamic">
-                <div id="img">
-                    <img src="images/menu1.png" alt="" id="big">
-                </div>
                 <div id="btn">
                     <a href="#" id="prev"><img src="images/prev_next.png" alt=""></a>
                     <a href="#" id="next"><img src="images/prev_next.png" alt=""></a>
+                </div>
+                <div id="img">
+                    <img src="images/menu1.png" alt="" id="big" class="menu1">
+                    <img src="images/menu3.png" alt="" class="menu3">
                 </div>
             </div>
         </main>
