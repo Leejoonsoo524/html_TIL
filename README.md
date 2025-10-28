@@ -27,11 +27,12 @@
 ---
 7. 'git init' : 현재 폴더를 작업 디렉터리 폴더로 연결, 폴더경로 옆에 **master** 표시 생기면 성공
 8. 'git branch -M main' : 깃 디렉터리 명칭을 브랜치라 부름. 해당 브랜치명을 개인에 맞게 변경 기본이 **main**
+9. 'git remote add origin https://github.com/Leejoonsoo524/html_TIL.git' : 깃허브 저장소 업로드 위치가 어디인지 주소연결
+
 ---
-9. 'git add .' **.** 이란 수정작업한 모든 파일을 올린다는뜻 'git add + 파일명' 해당 파일만 add 한다.
-10. 'git status' : 현재 스테이지 확인 -> add 하기 전에 보통 확인하고 add 후에 다 올라갔는지 확인할수있다.
-11. 'git commit -m "수정내용"' : 임시 저장소에 수정한 내용과 함께 수정된 내용을 저장한다.
-12. 'git remote add origin https://github.com/Leejoonsoo524/html_TIL.git' : 깃허브 저장소 업로드 위치가 어디인지 주소연결
+10. 'git add .' **.** 이란 수정작업한 모든 파일을 올린다는뜻 'git add + 파일명' 해당 파일만 add 한다.
+11. 'git status' : 현재 스테이지 확인 -> add 하기 전에 보통 확인하고 add 후에 다 올라갔는지 확인할수있다.
+12. 'git commit -m "수정내용"' : 임시 저장소에 수정한 내용과 함께 수정된 내용을 저장한다.
 13. 'git push origin main' :  완전히 저장된 내용을 git 서버에 업로드 한다.
 # HTML 작성법
 * ' <시작태그 속성="값" 속성="값"></닫기태그>'
